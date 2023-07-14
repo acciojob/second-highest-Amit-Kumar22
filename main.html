@@ -8,28 +8,30 @@
 
 <body>	
 	<script>
-		let largest = -Infinity, secondLargest = -Infinity;
+		let lar=-99999;
+		let seclar=-99999;
+		
 		function secondHighest(arr) {
 			//Write your code here
-			for(let i=0; i<arr.length;i++){
-    if(arr[i]>largest){
-        secondLargest = largest;
-        largest = arr[i];
-    }
-    else if(arr[i]<largest && arr[i]>secondLargest){
-        secondLargest = arr[i];
-    }
-}
-if(secondLargest!==-Infinity){
-    console.log( ${secondHighest);
-}
-else{
-    console.log("Infinity");
-}
+			for(let i=0; i<arr.length; i++){
+				if(arr[i]>lar){
+					seclar=lar;
+					lar=arr[i]
+				}
+				else if(arr[i]>seclar && arr[i]<lar){
+					seclar=arr[i];
+				}
+			}
+			if(arr.length==1 || arr.length==0){
+				console.log(Infinite)
+			}
+			else{
+				console.log($(secondHighest));
+			}
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			//var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
