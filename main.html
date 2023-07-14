@@ -8,9 +8,24 @@
 
 <body>	
 	<script>
+		let largest = -Infinity, secondLargest = -Infinity;
 		function secondHighest(arr) {
 			//Write your code here
-			
+			for(let i=0; i<arr.length;i++){
+    if(arr[i]>largest){
+        secondLargest = largest;
+        largest = arr[i];
+    }
+    else if(arr[i]<largest && arr[i]>secondLargest){
+        secondLargest = arr[i];
+    }
+}
+if(secondLargest!==-Infinity){
+    console.log( ${secondHighest);
+}
+else{
+    console.log("Infinity");
+}
 		}
 
 		function Main() {
