@@ -8,26 +8,27 @@
 
 <body>	
 	<script>
-		let lar=-99999;
-		let seclar=-99999;
-		
 		function secondHighest(arr) {
-			//Write your code here
-			for(let i=0; i<arr.length; i++){
-				if(arr[i]>lar){
-					seclar=lar;
-					lar=arr[i]
-				}
-				else if(arr[i]>seclar && arr[i]<lar){
-					seclar=arr[i];
-				}
-			}
-			if(arr.length==1 || arr.length==0){
-				console.log(Infinite)
-			}
-			else{
-				console.log(secondHighest);
-			}
+            let i, first, second;
+  
+            // There should be atleast two elements
+            if (arr.length < 2) {
+                console.log(" Invalid Input ");
+                return;
+            }
+      
+            arr.sort();
+      
+            // start from second last element
+            // as the largest element is at last
+            for (i = arr.length - 2; i >= 0; i--) {
+                // if the element is not
+                // equal to largest element
+                if (arr[i] != arr[arr.length - 1]) {
+                    console.log( arr[i]);
+                    return;
+                }
+            }
 		}
 		
 		
