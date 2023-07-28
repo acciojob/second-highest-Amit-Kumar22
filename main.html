@@ -8,32 +8,18 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-            let i, first, second;
-  
-            // There should be atleast two elements
-            if (arr.length < 2) {
-                console.log(" Invalid Input ");
-                return;
-            }
-      
-            arr.sort();
-      
-            // start from second last element
-            // as the largest element is at last
-            for (i = arr.length - 2; i >= 0; i--) {
-                // if the element is not
-                // equal to largest element
-                if (arr[i] != arr[arr.length - 1]) {
-                    console.log( arr[i]);
-                    return;
-                }
-            }
-		}
+	let sec=(arr) => {
+    let first=Math.max(...arr);
+    let index=arr.indexOf(first);
+    arr.splice(index,1);
+    let second=Math.max(...arr);
+    return(second);
+}
+console.log(sec(arr));
 		
 		
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			//var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
